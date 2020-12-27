@@ -39,6 +39,7 @@ Berikut hasil uji coba:
 ### Nomor 2: Konfigurasi agar men-drop semua akses SSH dari luar topologi (UML) ke server dengan IP DMZ di SURABAYA.
 Kita setting konfigurasi berikut seperti pada baris `iptables -A FORWARD -d 10.151.83.152/29 -i eth0 -p tcp -m tcp --dport 22 -j DROP` pada SURABAYA:   
 ![iptables_surabaya](https://user-images.githubusercontent.com/61267430/103164774-f70f9600-4841-11eb-9231-e913de2f8d7e.PNG)  
+
 Kita menggunakan `-A FORWARD` FORWARD chain untuk menyaring paket dengan protokol TCP dari luar topologi menuju ke DHCP Server MOJOKERTO dan DNS Server MALANG (yang berada di satu subnet yang sama yaitu subnet 10.151.83.152/29), dimana akses SSH yang masuk ke DHCP Server MOJOKERTO dan DNS Server MALANG melalui interfaces eth0 dari DHCP Server MOJOKERTO dan DNS Server MALANG agar di DROP (dalam kasus ini sudah diimplementasikan logging sehingga jump ke LOGGING).
 
 Berikut hasil uji coba:   
@@ -48,6 +49,7 @@ Berikut hasil uji coba:
 Kita setting pada DHCP dan DNS Server (Mojokerto dan Malang) konfigurasi seperti di baris keempat `iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP` berikut ini:  
 ![iptables_malang](https://user-images.githubusercontent.com/61267430/103164868-44d8ce00-4843-11eb-93af-f2643066d4da.PNG)  
 ![iptables_mojokerto](https://user-images.githubusercontent.com/61267430/103164869-4609fb00-4843-11eb-9023-cf998259df32.PNG)  
+
 Karena merupakan paket yang di DROP maka disini sudah diimplementasikan LOGGING sehingga jump ke LOGGING. Kita menggunakan INPUT chain untuk menyaring paket dengan protokol ICMP yang masuk agar dibatasi dengan `-m connlimit --connlimit-above 3`  sehingga hanya dibatasi maksimal 3 koneksi saja dan `--connlimit-mask 0` berasal darimana saja, sehingga selebihnya akan di DROP. 
 
 Berikut hasil uji coba:
