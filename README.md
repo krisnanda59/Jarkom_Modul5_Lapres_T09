@@ -15,6 +15,7 @@ Untuk subnetting kita menggunakan teknik VLSM dimana pembagian IP digunakan secu
 
 ### C : Routing
 Routing dilakukan sesuai yang telah diajarkan di Modul sebelumnya, untuk referensi Lapres bisa dilihat pada link ini: https://github.com/naminai/Jarkom_Modul4_Lapres_T09
+
 Berikut adalah contoh konfigurasi salah satu router (SURABAYA) yang sudah dilakukan routing: 
 
 ![settingroutingsurabaya](https://user-images.githubusercontent.com/61267430/103164658-c0854b80-4840-11eb-88d5-6fb8df26c007.PNG)
