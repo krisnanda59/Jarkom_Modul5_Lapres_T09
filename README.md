@@ -11,6 +11,8 @@ Untuk pembuatan topologi, seperti modul sebelumnya kita konfigurasikan di file T
 ### B : Subnetting (VLSM)
 Untuk subnetting kita menggunakan teknik VLSM dimana pembagian IP digunakan secukupnya dan seefisien mungkin, kita menggunakan aplikasi Cisco Packet Tracer untuk mempermudah pembagian IP dan routing. Referensi selengkapnya bisa dilihat di Lapres modul sebelumnya pada link ini: https://github.com/naminai/Jarkom_Modul4_Lapres_T09
 
+![image](https://user-images.githubusercontent.com/61267430/103167050-6db88d80-485a-11eb-8026-275088193bb9.png)
+
 ### C : Routing
 Routing dilakukan sesuai yang telah diajarkan di Modul sebelumnya, untuk referensi Lapres bisa dilihat pada link ini: (masukin link lapres).
 Berikut adalah contoh konfigurasi salah satu router (SURABAYA) yang sudah dilakukan routing: 
